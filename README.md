@@ -1,5 +1,6 @@
 # juno
 This repository contains all the files which makes a docker image for development purposes.
+![Docker Image CI](https://github.com/prateek2408/juno/workflows/Docker%20Image%20CI/badge.svg?branch=master)
 
 # Dockerfile
 The file builds the docker image.
@@ -12,3 +13,4 @@ The file builds the docker image.
      c. sensible -- A common set of standards for vim editor.
      d. vim-plug -- Plugin manager for vim.
      e. vundle -- Another vim plugin mangager.
+
