@@ -27,7 +27,9 @@ ENV GOPATH /root/go
 ENV PATH $PATH:/usr/local/go/bin:/root/go/bin
 
 #Install Go basic modules.
-RUN vim -T dumb -c GoInstallBinaries
+#Currently it is skipped as it eats up the terminal,
+#Trying to make it non interactive.
+#RUN vim -T dumb -c GoInstallBinaries
 
 WORKDIR /root
 CMD ["/bin/bash"]
