@@ -11,5 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag prateek2408/juno:$(date +%s)
+    - name: Build and Push the Docker image
+    - run: docker build . --file Dockerfile --tag prateek2408/juno:$(date +%s)
+    - run: docker push prateek2408/juno:$(date +%s)
