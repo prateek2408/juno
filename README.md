@@ -1,8 +1,6 @@
 # juno
 This repository contains all the files which makes a docker image for development purposes.
 
-![Docker Image CI](https://github.com/prateek2408/juno/workflows/Docker%20Image%20CI/badge.svg?branch=master)
-
 # Dockerfile
 The file builds the docker image.
 1. Based on ubuntu focal.
