@@ -1,5 +1,5 @@
 from ubuntu:focal
-RUN apt-get update && apt-get install -y git vim curl
+RUN apt-get update && apt-get install -y git vim curl build-essential manpages-dev make
 
 #Install go.
 RUN curl -XGET https://dl.google.com/go/go1.15.2.linux-amd64.tar.gz -o /opt/go.tar.gz 
@@ -30,6 +30,9 @@ ENV PATH $PATH:/usr/local/go/bin:/root/go/bin
 #Currently it is skipped as it eats up the terminal,
 #Trying to make it non interactive.
 #RUN vim -T dumb -c GoInstallBinaries
+
+#Install Delve the debbuger for Go.
+go get github.com/go-delve/delve/cmd/dlv
 
 WORKDIR /root
 CMD ["/bin/bash"]
