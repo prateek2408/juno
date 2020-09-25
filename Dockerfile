@@ -32,7 +32,7 @@ ENV PATH $PATH:/usr/local/go/bin:/root/go/bin
 #RUN vim -T dumb -c GoInstallBinaries
 
 #Install Delve the debbuger for Go.
-go get github.com/go-delve/delve/cmd/dlv
+RUN go get github.com/go-delve/delve/cmd/dlv
 
 WORKDIR /root
 CMD ["/bin/bash"]
