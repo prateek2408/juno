@@ -1,5 +1,5 @@
 from ubuntu:focal
-RUN apt-get update && apt-get install -y git vim curl build-essential manpages-dev make
+RUN apt-get update && apt-get install -y git vim curl build-essential manpages-dev make curl-config
 
 #Install go.
 RUN curl -XGET https://dl.google.com/go/go1.15.2.linux-amd64.tar.gz -o /opt/go.tar.gz 
