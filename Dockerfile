@@ -1,4 +1,5 @@
 from ubuntu:focal
+#Install all dependent packages.
 RUN apt-get update && apt-get install -y git vim curl build-essential manpages-dev make curl-config wget
 
 #Install go.
