@@ -34,11 +34,11 @@ git clone https://github.com/tpope/vim-sensible.git
 ADD vimrc /etc/vim/vimrc.local
 
 #Creating dirs for go.
-RUN mkdir -p /${USER}/go/src && mkdir -p /${USER}/go/bin
+RUN mkdir -p /${USER_DIR}/go/src && mkdir -p /${USER_DIR}/go/bin
 
 #Setup env vars.
-ENV GOPATH /${USER}/go
-ENV PATH $PATH:/usr/local/go/bin:/${USER}/go/bin
+ENV GOPATH /${USER_DIR}/go
+ENV PATH $PATH:/usr/local/go/bin:/${USER_DIR}/go/bin
 
 #Install Go basic modules.
 #Currently it is skipped as it eats up the terminal,
@@ -49,4 +49,5 @@ ENV PATH $PATH:/usr/local/go/bin:/${USER}/go/bin
 RUN go get github.com/go-delve/delve/cmd/dlv
 
 WORKDIR ${USER_DIR}
+RUN chown -R devel:devel ${USER_DIR}/*
 CMD ["/bin/bash"]
