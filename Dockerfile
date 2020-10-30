@@ -8,6 +8,9 @@ RUN groupadd --gid 1000 ${USER} && \
     --create-home --shell /bin/bash \
     ${USER}
 
+#Set TimeZone non-interactively.
+ENV TZ=Asia/Kolkata
+
 #Install all dependent packages.
 RUN apt-get update && apt-get install -y git vim curl build-essential manpages-dev make wget libasound2-dev alsa-base pulseaudio
 
