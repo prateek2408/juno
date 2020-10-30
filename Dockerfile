@@ -35,5 +35,12 @@ ENV PATH $PATH:/usr/local/go/bin:/root/go/bin
 #Install Delve the debbuger for Go.
 RUN go get github.com/go-delve/delve/cmd/dlv
 
+#Adding UID/GID in Docker container to prevent running as root inside docker.
+ENV USER=devel
+RUN groupadd --gid 1000 devel && \
+    useradd --uid 1000 --gid 1000 \
+    --create-home --shell /bin/bash \
+    ${USER}
+
 WORKDIR /root
 CMD ["/bin/bash"]
