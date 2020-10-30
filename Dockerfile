@@ -9,6 +9,7 @@ RUN groupadd --gid 1000 ${USER} && \
     ${USER}
 
 #Set TimeZone non-interactively.
+ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Asia/Kolkata
 
 #Install all dependent packages.
