@@ -13,7 +13,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Asia/Kolkata
 
 #Install all dependent packages.
-RUN apt-get update && apt-get install -y git vim curl build-essential manpages-dev make wget libasound2-dev alsa-base pulseaudio
+RUN apt-get update && apt-get install -y git vim curl build-essential manpages-dev make wget libasound2-dev alsa-base pulseaudio musl
 
 #Install go.
 RUN curl -XGET https://dl.google.com/go/go1.15.2.linux-amd64.tar.gz -o /opt/go.tar.gz 
