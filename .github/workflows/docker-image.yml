@@ -20,4 +20,4 @@ jobs:
       name: Push the image
       env:
         REPO_SECRET: ${{ secrets.DOCKER_REPO_PASS }} 
-      run: docker login -u prateek2408 -p "$REPO_SECRET"; docker push prateek2408/juno
+      run: echo "$REPO_SECRET" | docker login -u prateek2408 --password-stdin;docker push prateek2408/juno
