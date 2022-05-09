@@ -17,4 +17,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag prateek2408/juno
     - name: Push the image
-      run: docker push prateek2408/juno
+      run: docker login -u prateek2408 -p $DOCKER_REPO_PASS; docker push prateek2408/juno
